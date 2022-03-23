@@ -106,6 +106,20 @@ def shedied():
   os.system("cls")
   exit()
 
+def surrender():
+  print("====== YOU SURRENDERED ======")
+  slowprint("You surrendered to the Karen!")
+  slowprint("You surrender, only to be slapped across the face with her purse.")
+  slowprint("Your HP drops to 0 and you die.")
+  slowprint("Never trust a Karen.")
+  print()
+  print("Press Enter to continue.")
+  input("> ")
+  write("yourhealth", 100)
+  write("enemyhp", 100)
+  os.system("cls")
+  exit()
+
 
 def battle():
   print("====== BATTLE ======")
@@ -114,13 +128,13 @@ def battle():
   print("The Karen's HP:", read("enemyhp"))
   print()
   print("Send 1 to engage with the Karen")
-  print("Send 2 to increase your shield count")
+  print("Send 2 to surrender to Karen")
   choice = input("> ")
   if choice == "1":
     os.system("cls")
     attack()
   elif choice == "2":
-    print("shield function")
+    surrender()
   else:
     os.system("cls")
     battle()

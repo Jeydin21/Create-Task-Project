@@ -28,7 +28,7 @@ os.system("cls")
 def attack():
   print("====== YOU ATTACKED ======")
   chance = random.randrange(11)
-  attack = random.randrange(10, 20)
+  attack = random.randint(10, 20)
   if chance >= 0 and chance <= 3:
     slowprint("You missed! Karen dodged your attack!")
     print()
@@ -68,7 +68,7 @@ def attack():
 def enemystrike():
   print("====== YOU GOT ATTACKED ======")
   chance = random.randrange(11)
-  attack = random.randrange(10, 20)
+  attack = random.randint(10, 20)
   if chance >= 0 and chance <= 3:
     slowprint("You dodged Karen's attack!")
     print()

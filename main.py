@@ -30,12 +30,16 @@ def attack():
     print()
     slowprint("You dealt " + str(attack) + " damage to the Karen!")
     write("enemyhp", health)
+    if int(read("enemyhp")) < 1:
+      shedied()
   else:
     slowprint("You landed a critical attack! Your damage has been doubled!")
     health = int(read("enemyhp")) - (attack * 2)
     print()
     print("You dealt " + str(attack * 2) + " damage to the Karen (" + str(attack) + " x 2)!")
     write("enemyhp", health)
+    if int(read("enemyhp")) < 1:
+      shedied()
   print()
   print("Press Enter to continue.")
   input("> ")
@@ -58,18 +62,50 @@ def enemystrike():
     print()
     slowprint("You took " + str(attack) + " damage!")
     write("yourhealth", health)
+    if int(read("yourhealth")) < 1:
+      youdied()
   else:
     slowprint("Karen landed a critical attack! Her attack has been doubled!")
     health = int(read("yourhealth")) - (attack * 2)
     print()
     print("She dealt " + str(attack * 2) + " damage to the you (" + str(attack) + " x 2)!")
     write("yourhealth", health)
+    if int(read("yourhealth")) < 1:
+      youdied()
   print()
   print("Press Enter to continue.")
   input("> ")
   os.system("cls")
   battle()
   
+def youdied():
+  print("====== YOU DIED ======")
+  os.system("cls")
+  slowprint("You died! Karen hit you with her purse too many times and you lost too much HP.")
+  slowprint("You feel sad in your last moments, regretting that you even decided to defend a restaurant that barely even payed anything.")
+  slowprint("At least, you won't have to worry about getting that promotion anymore.")
+  print()
+  print("Press Enter to continue.")
+  input("> ")
+  write("yourhealth", 100)
+  write("enemyhp", 100)
+  os.system("cls")
+  exit()
+
+def shedied():
+  print("====== KAREN DIED ======")
+  os.system("cls")
+  slowprint("You killed Karen! You hit her with your frying pan too many times and she lost too much HP.")
+  slowprint("Good job! You successfully defended your restaurant against the Karen!")
+  slowprint("Your boss was so proud of you that he gave you a promotion")
+  print()
+  print("Press Enter to continue.")
+  input("> ")
+  write("yourhealth", 100)
+  write("enemyhp", 100)
+  os.system("cls")
+  exit()
+
 
 def battle():
   print("====== BATTLE ======")

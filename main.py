@@ -5,25 +5,26 @@ import time
 
 os.system("cls")
 
-print("====== The Great McDonalds Battle ======")
-time.sleep(1)
-print("You are an underage McDonalds worker, who flips burger patties for a living while hoping to get a promotion so you can make a little bit more money.")
-time.sleep(2)
-print("One day, a woman walks into the store and complains about her burger, which turned out to be a little undercooked on the inside.")
-time.sleep(2)
-print("Since no one takes her seriously, she starts throwing things around the restaurant and attacking people.")
-time.sleep(2)
-print("She announces that her name is Karen and that she vows to sue everyone in the restaurant for not caring about her.")
-time.sleep(2)
-print("You walk out of the kitchen with your trusty frying pan to engage in combat with Karen and take care of the problem.")
-time.sleep(2)
-print("Maybe this will get you the promotion you've always wanted.")
-time.sleep(2)
-print()
-print("Press Enter to continue.")
-input("> ")
-
-os.system("cls")
+def start():
+  print("====== The Great McDonalds Battle ======")
+  time.sleep(1)
+  print("You are an underage McDonalds worker, who flips burger patties for a living while hoping to get a promotion so you can make a little bit more money.")
+  time.sleep(2)
+  print("One day, a woman walks into the store and complains about her burger, which turned out to be a little undercooked on the inside.")
+  time.sleep(2)
+  print("Since no one takes her seriously, she starts throwing things around the restaurant and attacking people.")
+  time.sleep(2)
+  print("She announces that her name is Karen and that she vows to sue everyone in the restaurant for not caring about her.")
+  time.sleep(2)
+  print("You walk out of the kitchen with your trusty frying pan to engage in combat with Karen and take care of the problem.")
+  time.sleep(2)
+  print("Maybe this will get you the promotion you've always wanted.")
+  time.sleep(2)
+  print()
+  print("Press Enter to continue.")
+  input("> ")
+  os.system("cls")
+  battle()
 
 def attack():
   print("====== YOU ATTACKED ======")
@@ -117,7 +118,7 @@ def youdied():
   write("yourhealth", 100)
   write("enemyhp", 100)
   os.system("cls")
-  exit()
+  restart()
 
 def shedied():
   os.system("cls")
@@ -131,7 +132,7 @@ def shedied():
   write("yourhealth", 100)
   write("enemyhp", 100)
   os.system("cls")
-  exit()
+  restart()
 
 def runaway():
   print("====== YOU RAN AWAY ======")
@@ -146,7 +147,25 @@ def runaway():
   write("yourhealth", 100)
   write("enemyhp", 100)
   os.system("cls")
-  exit()
+  restart()
+
+def restart():
+  print("====== THANK YOU FOR PLAYING ======")
+  slowprint("Thank you for playing my text based game!")
+  slowprint("Would you like to play again?")
+  print()
+  print("Send 1 to restart the game")
+  print("Send 2 to terminate the process")
+  choice = input("> ")
+  if choice == "1":
+    os.system("cls")
+    start()
+  elif choice == "2":
+    os.system("cls")
+    exit()
+  else:
+    restart()
+
 
 def battle():
   print("====== BATTLE ======")
@@ -168,4 +187,4 @@ def battle():
     os.system("cls")
     battle()
 
-battle()
+start()

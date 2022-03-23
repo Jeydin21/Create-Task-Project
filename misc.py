@@ -9,19 +9,19 @@ def slowprint(string):
 		time.sleep(5./500)
 
 def read(x):
-  in_file = open(x + ".txt", "r")
+  in_file = open("data/" + x + ".txt", "r")
   line = in_file.readline()
   line_list = line.split(" ")
   in_file.close()
   return " ".join(line_list)
 
 def write(x, string):
-  in_file = open(x + ".txt", "w")
+  in_file = open("data/" + x + ".txt", "w")
   print(string, file = in_file, end=" ")
   in_file.close()
 
 def openfile(filename):
-  file = open(filename + ".txt", 'r')
+  file = open("data/" + filename + ".txt", 'r')
   list = []
   for line in file:
     line = line.strip()

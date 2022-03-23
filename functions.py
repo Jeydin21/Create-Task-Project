@@ -5,7 +5,7 @@ def slowprint(string):
 	for letter in string + '\n':
 		sys.stdout.write(letter)
 		sys.stdout.flush()
-		time.sleep(5./250)
+		time.sleep(5./500)
 
 def read(x):
   in_file = open(x + ".txt", "r")

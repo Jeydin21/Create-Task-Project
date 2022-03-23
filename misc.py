@@ -16,5 +16,5 @@ def read(x):
 
 def write(x, string):
   in_file = open(x + ".txt", "w")
-  print(string, file = in_file)
+  print(string, file = in_file, end=" ")
   in_file.close()

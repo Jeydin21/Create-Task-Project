@@ -35,16 +35,20 @@ def attack():
   print("====== YOU ATTACKED ======")
   chance = random.randrange(11)
   attack = random.randrange(10, 20)
-  print(attack)
   if chance > 0 and chance < 5:
     slowprint("You missed! The Karen dodged your attack!")
+    slowprint("You did not deal any damage")
   elif chance > 4 and chance < 9:
     slowprint("You attacked the Karen with your frying pan!")
-    health = read("stats") - attack
+    health = int(read("stats")) - attack
+    print()
+    slowprint("You dealt " + attack + " damage to the Karen!")
     write("stats", health)
   else:
     slowprint("You landed a critical attack! Your damage has been doubled!")
-    health = read("stats") - (attack * 2)
+    health = int(read("stats")) - (attack * 2)
+    print()
+    print("You dealt " + attack * 2 + " damage to the enemy (" + attack + " x 2)!")
     write("stats", health)
   input("> ")
   os.system("cls")

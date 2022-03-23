@@ -6,6 +6,8 @@ import time
 os.system("cls")
 
 def start():
+  write("yourhealth", 100)
+  write("enemyhp", 100)
   print("====== The Great McDonalds Battle ======")
   time.sleep(1)
   print("You are an underage McDonalds worker, who flips burger patties for a living while hoping to get a promotion so you can make a little bit more money.")

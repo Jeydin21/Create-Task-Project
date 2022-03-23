@@ -30,7 +30,7 @@ def attack():
   chance = random.randrange(11)
   attack = random.randint(10, 20)
   if chance >= 0 and chance <= 3:
-    slowprint("You missed! Karen dodged your attack!")
+    slowprint(choosestatement("enemydodge"))
     print()
     slowprint("You did not deal any damage to Karen.")
     print()
@@ -38,7 +38,7 @@ def attack():
     print("Karen's HP:", read("enemyhp"))
     print()
   elif chance >= 4 and chance <= 8:
-    slowprint("You attacked Karen with your frying pan!")
+    slowprint(choosestatement("youattack"))
     health = int(read("enemyhp")) - attack
     print()
     slowprint("You dealt " + str(attack) + " damage to Karen!")
@@ -48,7 +48,7 @@ def attack():
     write("enemyhp", health)
     print()
   else:
-    slowprint("You landed a critical attack! Your damage has been doubled!")
+    slowprint(choosestatement("youcrit"))
     health = int(read("enemyhp")) - (attack * 2)
     print()
     print("You dealt " + str(attack * 2) + " damage to Karen (" + str(attack) + " x 2)!")
@@ -70,7 +70,7 @@ def enemystrike():
   chance = random.randrange(11)
   attack = random.randint(10, 20)
   if chance >= 0 and chance <= 3:
-    slowprint("You dodged Karen's attack!")
+    slowprint(choosestatement("youdodge"))
     print()
     slowprint("Karen did not deal any damage to you.")
     print()
@@ -78,7 +78,7 @@ def enemystrike():
     print("Karen's HP:", read("enemyhp"))
     print()
   elif chance >= 4 and chance <= 8:
-    slowprint("Karen attacked you with her purse!")
+    slowprint(choosestatement("enemyattack"))
     health = int(read("yourhealth")) - attack
     print()
     slowprint("You took " + str(attack) + " damage!")
@@ -88,7 +88,7 @@ def enemystrike():
     write("yourhealth", health)
     print()
   else:
-    slowprint("Karen landed a critical attack! Her attack was doubled!")
+    slowprint(choosestatement("enemycrit"))
     health = int(read("yourhealth")) - (attack * 2)
     print()
     print("She dealt " + str(attack * 2) + " damage to you (" + str(attack) + " x 2)!")

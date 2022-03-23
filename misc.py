@@ -1,5 +1,6 @@
 import sys
 import time
+import random
 
 def slowprint(string):
 	for letter in string + '\n':
@@ -18,3 +19,19 @@ def write(x, string):
   in_file = open(x + ".txt", "w")
   print(string, file = in_file, end=" ")
   in_file.close()
+
+def openfile(filename):
+  file = open(filename + ".txt", 'r')
+  list = []
+  for line in file:
+    line = line.strip()
+    statement = line.split(',')
+    list.append(statement)
+  file.close()
+  return list
+
+def choosestatement(x):
+  file = openfile(x)
+  index = random.randrange(len(file))
+  statement = file[index]
+  return " ".join(statement)

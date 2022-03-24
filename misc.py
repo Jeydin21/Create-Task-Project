@@ -1,6 +1,7 @@
 import sys
 import time
 import random
+import msvcrt
 
 def slowprint(string):
 	for letter in string + '\n':

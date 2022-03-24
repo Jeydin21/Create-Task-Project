@@ -142,7 +142,7 @@ def runaway():
   slowprint("This proved to be a fatal mistake.")
   slowprint("Karen reaches down and takes her shoe off of her foot.")
   slowprint("Summoning the power of the gods, she hurls her shoe at you with inhuman power.")
-  slowprint("The shoe hits you, and you die, with your HP now at 0")
+  slowprint("The shoe hits you, and you die.")
   print()
   print("Press Enter to continue.")
   input("> ")

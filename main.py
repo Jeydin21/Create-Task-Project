@@ -2,7 +2,6 @@ import os
 import random
 from misc import *
 import time
-from termcolor import colored
 
 def start():
   write("yourhealth", 100)

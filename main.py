@@ -2,11 +2,14 @@ import os
 import random
 from misc import *
 import time
+from termcolor import colored
 
 def start():
   write("yourhealth", 100)
   write("enemyhp", 100)
-  print("====== The Great McDonalds Battle ======")
+  printcolor('========================================','cyan')
+  printcolor('-------THE-GREAT-MCDONALDS-BATTLE-------','green')
+  printcolor('========================================','cyan')
   time.sleep(1)
   print("You are an underage McDonalds worker, who flips burger patties for a living while hoping to get a promotion so you can make a little bit more money.")
   time.sleep(2)
@@ -21,13 +24,15 @@ def start():
   print("Maybe this will get you the promotion you've always wanted.")
   time.sleep(2)
   print()
-  print("Press Enter to continue.")
-  input("> ")
+  printcolor("Press ENTER to continue.", "green")
+  input(">>> ")
   os.system("cls")
   battle()
 
 def attack():
-  print("====== YOU ATTACKED ======")
+  printcolor('========================================','cyan')
+  printcolor('--------------YOU-ATTACKED--------------','green')
+  printcolor('========================================','cyan')
   chance = random.randrange(11)
   attack = random.randint(10, 20)
   if chance >= 0 and chance <= 2:
@@ -59,15 +64,17 @@ def attack():
     write("enemyhp", health)
     print()
   print()
-  print("Press Enter to continue.")
-  input("> ")
+  printcolor("Press ENTER to continue.", "green")
+  input(">>> ")
   os.system("cls")
   if int(read("enemyhp")) <= 0:
     shedied()
   enemystrike()
 
 def enemystrike():
-  print("====== YOU GOT ATTACKED ======")
+  printcolor('========================================','cyan')
+  printcolor('------------YOU-GOT-ATTACKED------------','red')
+  printcolor('========================================','cyan')
   chance = random.randrange(11)
   attack = random.randint(10, 20)
   if chance >= 0 and chance <= 2:
@@ -99,8 +106,8 @@ def enemystrike():
     write("yourhealth", health)
     print()
   print()
-  print("Press Enter to continue.")
-  input("> ")
+  printcolor("Press ENTER to continue.", "green")
+  input(">>> ")
   os.system("cls")
   if int(read("yourhealth")) <= 0:
     youdied()
@@ -108,13 +115,15 @@ def enemystrike():
 
 def youdied():
   os.system("cls")
-  print("====== YOU DIED ======")
+  printcolor('========================================','cyan')
+  printcolor('----------------YOU-DIED----------------','red')
+  printcolor('========================================','cyan')
   slowprint("You died! Karen hit you with her purse too many times and you lost too much HP.")
   slowprint("You feel sad in your last moments, regretting that you even decided to defend a restaurant that barely even payed anything.")
   slowprint("At least, you won't have to worry about getting that promotion anymore.")
   print()
-  print("Press Enter to continue.")
-  input("> ")
+  printcolor("Press ENTER to continue.", "green")
+  input(">>> ")
   write("yourhealth", 100)
   write("enemyhp", 100)
   os.system("cls")
@@ -122,41 +131,47 @@ def youdied():
 
 def shedied():
   os.system("cls")
-  print("====== KAREN DIED ======")
+  printcolor('========================================','cyan')
+  printcolor('---------------KAREN-DIED---------------','green')
+  printcolor('========================================','cyan')
   slowprint("You killed Karen! You hit her with your frying pan too many times and she lost too much HP.")
   slowprint("Good job! You successfully defended your restaurant against Karen!")
   slowprint("Your boss was so proud of you that he gave you a promotion!")
   print()
-  print("Press Enter to continue.")
-  input("> ")
+  printcolor("Press ENTER to continue.", "green")
+  input(">>> ")
   write("yourhealth", 100)
   write("enemyhp", 100)
   os.system("cls")
   restart()
 
 def runaway():
-  print("====== YOU RAN AWAY ======")
+  printcolor('========================================','cyan')
+  printcolor('--------------YOU-RAN-AWAY--------------','red')
+  printcolor('========================================','cyan')
   slowprint("You ran away from Karen!")
   slowprint("This proved to be a fatal mistake.")
   slowprint("Karen reaches down and takes her shoe off of her foot.")
   slowprint("Summoning the power of the gods, she hurls her shoe at you with inhuman power.")
   slowprint("The shoe hits you, and you die.")
   print()
-  print("Press Enter to continue.")
-  input("> ")
+  printcolor("Press ENTER to continue.", "green")
+  input(">>> ")
   write("yourhealth", 100)
   write("enemyhp", 100)
   os.system("cls")
   restart()
 
 def restart():
-  print("====== THANK YOU FOR PLAYING ======")
+  printcolor('========================================','cyan')
+  printcolor('-----------THANKS-FOR-PLAYING-----------','blue')
+  printcolor('========================================','cyan')
   slowprint("Thank you for playing my text based game!")
   slowprint("Would you like to play again?")
   print()
   print("Send 1 to restart the game")
   print("Send 2 to terminate the process")
-  choice = input("> ")
+  choice = input(">>> ")
   if choice == "1":
     os.system("cls")
     start()
@@ -167,7 +182,9 @@ def restart():
     restart()
 
 def battle():
-  print("====== BATTLE ======")
+  printcolor('========================================','cyan')
+  printcolor('-----------------BATTLE-----------------','yellow')
+  printcolor('========================================','cyan')
   slowprint("You must defend your restaurant against Karen! Send a number to select an option:")
   print()
   print("Your HP:", read("yourhealth"))
@@ -175,7 +192,7 @@ def battle():
   print()
   print("Send 1 to engage with Karen")
   print("Send 2 to run away from Karen")
-  choice = input("> ")
+  choice = input(">>> ")
   if choice == "1":
     os.system("cls")
     attack()

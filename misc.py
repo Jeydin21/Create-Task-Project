@@ -1,6 +1,7 @@
 import sys
 import time
 import random
+from termcolor import colored
 
 def slowprint(string):
 	for letter in string + '\n':
@@ -35,3 +36,6 @@ def choosestatement(x):
   index = random.randrange(len(file))
   statement = file[index]
   return " ".join(statement)
+
+def printcolor(string, color):
+  print(colored(string, color))

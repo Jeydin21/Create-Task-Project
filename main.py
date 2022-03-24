@@ -3,8 +3,6 @@ import random
 from misc import *
 import time
 
-os.system("cls")
-
 def start():
   write("yourhealth", 100)
   write("enemyhp", 100)
@@ -168,7 +166,6 @@ def restart():
   else:
     restart()
 
-
 def battle():
   print("====== BATTLE ======")
   slowprint("You must defend your restaurant against Karen! Send a number to select an option:")
@@ -189,4 +186,5 @@ def battle():
     os.system("cls")
     battle()
 
+os.system("cls")
 start()

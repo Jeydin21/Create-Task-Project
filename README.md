@@ -5,3 +5,6 @@ No one listens to her, and she starts destroying the restaurant and attacking pe
 <br>
 <br>
 Currently, sending something while the program is printing something messes up the function
+<br>
+<br>
+Make sure that the required dependencies are installed before you run the program

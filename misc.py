@@ -1,6 +1,8 @@
-import sys
-import time
+import os
 import random
+from misc import *
+import time
+import sys
 from termcolor import colored
 
 def slowprint(string):

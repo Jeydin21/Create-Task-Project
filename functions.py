@@ -202,37 +202,6 @@ def restart():
   else:
     restart()
 
-def addshield():
-  shieldhp = read("shieldhp")
-  if int(shieldhp) >= 20:
-    printcolor("========================================", "cyan")
-    printcolor("---------YOU-CANNOT-GAIN-SHIELDS--------", "red")
-    printcolor("========================================", "cyan")
-    print()
-    slowprint("You are at the maximum shield count!")
-    print()
-    printcolor("Press ENTER to continue.", "green")
-    input(">>> ")
-    os.system("cls")
-    battle()
-  shield = random.randrange(1, 11)
-  printcolor("========================================", "cyan")
-  printcolor("-----------YOU-GAINED-SHIELDS-----------", "green")
-  printcolor("========================================", "cyan")
-  slowprint("You increased your shield HP by " + str(shield) + " points!")
-  health = int(read("shieldhp")) + shield
-  battle()
-  print()
-  print("Your shield HP: " + str(read("shieldhp")) + "+ " + str(shield) + " = " + str(health))
-  write("shieldhp", health)
-  print()
-  printcolor("Press ENTER to continue.", "green")
-  input(">>> ")
-  os.system("cls")
-  battle()
-
-
-
 def battle():
   printcolor("========================================", "cyan")
   printcolor("-----------------BATTLE-----------------", "yellow")
@@ -245,16 +214,12 @@ def battle():
   print("Karen's HP:", read("enemyhp"))
   print()
   print("Send 1 to engage with Karen")
-  print("Send 2 to increase your shield count")
-  print("Send 3 to run away from Karen")
+  print("Send 2 to run away from Karen")
   choice = input(">>> ")
   if choice == "1":
     os.system("cls")
     attack()
   elif choice == "2":
-    os.system("cls")
-    addshield()
-  elif choice == "3":
     os.system("cls")
     runaway()
   else:

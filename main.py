@@ -4,15 +4,15 @@ from misc import *
 import time
 
 def rules():
-  printcolor('========================================','cyan')
-  printcolor('-----------------RULES------------------','green')
-  printcolor('========================================','cyan')
+  printcolor("========================================", "cyan")
+  printcolor("-----------------RULES------------------", "green")
+  printcolor("========================================", "cyan")
   time.sleep(1)
   print("There is only one rule that you have to follow while playing this game.")
   time.sleep(2)
-  print("Please do not enter anything into the terminal")
+  print("Please do not enter anything into the terminal unless the game tells you.")
   time.sleep(2)
-  print("It might make the game do something unexpected, but will not break the game, this is just to not annoy you.")
+  print("It might make the game do something unexpected, but will not break the game, this message is just to inform you.")
   print()
   printcolor("Press ENTER to continue.", "green")
   input(">>> ")
@@ -23,9 +23,9 @@ def rules():
 def start():
   write("yourhealth", 100)
   write("enemyhp", 100)
-  printcolor('========================================','cyan')
-  printcolor('-------THE-GREAT-MCDONALDS-BATTLE-------','green')
-  printcolor('========================================','cyan')
+  printcolor("========================================", "cyan")
+  printcolor("-------THE-GREAT-MCDONALDS-BATTLE-------", "green")
+  printcolor("========================================", "cyan")
   time.sleep(1)
   print("You are an underage McDonalds worker, who flips burger patties for a living while hoping to get a promotion so you can make a little bit more money.")
   time.sleep(2)
@@ -46,9 +46,9 @@ def start():
   battle()
 
 def attack():
-  printcolor('========================================','cyan')
-  printcolor('--------------YOU-ATTACKED--------------','green')
-  printcolor('========================================','cyan')
+  printcolor("========================================", "cyan")
+  printcolor("--------------YOU-ATTACKED--------------", "green")
+  printcolor("========================================", "cyan")
   chance = random.randrange(11)
   attack = random.randint(10, 20)
   if chance >= 0 and chance <= 2:
@@ -88,9 +88,9 @@ def attack():
   enemystrike()
 
 def enemystrike():
-  printcolor('========================================','cyan')
-  printcolor('------------YOU-GOT-ATTACKED------------','red')
-  printcolor('========================================','cyan')
+  printcolor("========================================", "cyan")
+  printcolor("------------YOU-GOT-ATTACKED------------", "red")
+  printcolor("========================================", "cyan")
   chance = random.randrange(11)
   attack = random.randint(10, 20)
   if chance >= 0 and chance <= 2:
@@ -131,9 +131,9 @@ def enemystrike():
 
 def youdied():
   os.system("cls")
-  printcolor('========================================','cyan')
-  printcolor('----------------YOU-DIED----------------','red')
-  printcolor('========================================','cyan')
+  printcolor("========================================", "cyan")
+  printcolor("----------------YOU-DIED----------------", "red")
+  printcolor("========================================", "cyan")
   slowprint("You died! Karen hit you with her purse too many times and you lost too much HP.")
   slowprint("You feel sad in your last moments, regretting that you even decided to defend a restaurant that barely even payed anything.")
   slowprint("At least, you won't have to worry about getting that promotion anymore.")
@@ -147,9 +147,9 @@ def youdied():
 
 def shedied():
   os.system("cls")
-  printcolor('========================================','cyan')
-  printcolor('---------------KAREN-DIED---------------','green')
-  printcolor('========================================','cyan')
+  printcolor("========================================", "cyan")
+  printcolor("---------------KAREN-DIED---------------", "green")
+  printcolor("========================================", "cyan")
   slowprint("You killed Karen! You hit her with your frying pan too many times and she lost too much HP.")
   slowprint("Good job! You successfully defended your restaurant against Karen!")
   slowprint("Your boss was so proud of you that he gave you a promotion!")
@@ -162,9 +162,9 @@ def shedied():
   restart()
 
 def runaway():
-  printcolor('========================================','cyan')
-  printcolor('--------------YOU-RAN-AWAY--------------','red')
-  printcolor('========================================','cyan')
+  printcolor("========================================", "cyan")
+  printcolor("--------------YOU-RAN-AWAY--------------", "red")
+  printcolor("========================================", "cyan")
   slowprint("You ran away from Karen!")
   slowprint("This proved to be a fatal mistake.")
   slowprint("Karen reaches down and takes her shoe off of her foot.")
@@ -179,9 +179,9 @@ def runaway():
   restart()
 
 def restart():
-  printcolor('========================================','cyan')
-  printcolor('-----------THANKS-FOR-PLAYING-----------','blue')
-  printcolor('========================================','cyan')
+  printcolor("========================================", "cyan")
+  printcolor("-----------THANKS-FOR-PLAYING-----------", "blue")
+  printcolor("========================================", "cyan")
   slowprint("Thank you for playing my text based game!")
   slowprint("Would you like to play again?")
   print()
@@ -198,9 +198,9 @@ def restart():
     restart()
 
 def battle():
-  printcolor('========================================','cyan')
-  printcolor('-----------------BATTLE-----------------','yellow')
-  printcolor('========================================','cyan')
+  printcolor("========================================", "cyan")
+  printcolor("-----------------BATTLE-----------------", "yellow")
+  printcolor("========================================", "cyan")
   slowprint("You must defend your restaurant against Karen! Send a number to select an option:")
   print()
   print("Your HP:", read("yourhealth"))

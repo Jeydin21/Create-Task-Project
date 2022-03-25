@@ -53,7 +53,7 @@ def attack():
   printcolor("========================================", "cyan")
   chance = random.randrange(11)
   attack = random.randint(10, 20)
-  if chance >= 0 and chance <= 2:
+  if chance >= 0 and chance <= 1:
     slowprint(choosestatement("enemydodge"))
     print()
     slowprint("You did not deal any damage to Karen.")
@@ -61,7 +61,7 @@ def attack():
     print("Your HP:", read("yourhealth"))
     print("Karen's HP:", read("enemyhp"))
     print()
-  elif chance >= 3 and chance <= 8:
+  elif chance >= 2 and chance <= 8:
     slowprint(choosestatement("youattack"))
     health = int(read("enemyhp")) - attack
     print()
@@ -95,7 +95,7 @@ def enemystrike():
   printcolor("========================================", "cyan")
   chance = random.randrange(11)
   attack = random.randint(10, 20)
-  if chance >= 0 and chance <= 2:
+  if chance >= 0 and chance <= 1:
     slowprint(choosestatement("youdodge"))
     print()
     slowprint("Karen did not deal any damage to you.")
@@ -103,7 +103,7 @@ def enemystrike():
     print("Your HP:", read("yourhealth"))
     print("Karen's HP:", read("enemyhp"))
     print()
-  elif chance >= 3 and chance <= 8:
+  elif chance >= 2 and chance <= 8:
     slowprint(choosestatement("enemyattack"))
     health = int(read("yourhealth")) - attack
     print()
@@ -221,6 +221,7 @@ def addshield():
   printcolor("========================================", "cyan")
   slowprint("You increased your shield HP by " + str(shield) + " points!")
   health = int(read("shieldhp")) + shield
+  battle()
   print()
   print("Your shield HP: " + str(read("shieldhp")) + "+ " + str(shield) + " = " + str(health))
   write("shieldhp", health)

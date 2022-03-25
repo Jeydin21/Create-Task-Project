@@ -3,6 +3,23 @@ import random
 from misc import *
 import time
 
+def rules():
+  printcolor('========================================','cyan')
+  printcolor('-----------------RULES------------------','green')
+  printcolor('========================================','cyan')
+  time.sleep(1)
+  print("There is only one rule that you have to follow while playing this game.")
+  time.sleep(2)
+  print("Please do not enter anything into the terminal")
+  time.sleep(2)
+  print("It might make the game do something unexpected, but will not break the game, this is just to not annoy you.")
+  print()
+  printcolor("Press ENTER to continue.", "green")
+  input(">>> ")
+  os.system("cls")
+  start()
+
+
 def start():
   write("yourhealth", 100)
   write("enemyhp", 100)
@@ -203,4 +220,4 @@ def battle():
     battle()
 
 os.system("cls")
-start()
+rules()

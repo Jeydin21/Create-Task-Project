@@ -1,4 +1,3 @@
-from asyncio import shield
 import time
 import os
 import sys

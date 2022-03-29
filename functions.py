@@ -208,8 +208,6 @@ def battle():
   slowprint("You must defend your restaurant against Karen! Send a number to select an option:")
   print()
   print("Your HP:", read("yourhealth"))
-  print("Your Shield HP:", read("shieldhp"))
-  print()
   print("Karen's HP:", read("enemyhp"))
   print()
   print("Send 1 to engage with Karen")

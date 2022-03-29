@@ -23,7 +23,6 @@ def rules():
 def start():
   write("yourhealth", 100)
   write("enemyhp", 100)
-  write("shieldhp", 0)
   printcolor("========================================", "cyan")
   printcolor("-------THE-GREAT-MCDONALDS-BATTLE-------", "green")
   printcolor("========================================", "cyan")
@@ -143,7 +142,6 @@ def youdied():
   input(">>> ")
   write("yourhealth", 100)
   write("enemyhp", 100)
-  write("shieldhp", 0)
   os.system("cls")
   restart()
 
@@ -160,7 +158,6 @@ def shedied():
   input(">>> ")
   write("yourhealth", 100)
   write("enemyhp", 100)
-  write("shieldhp", 0)
   os.system("cls")
   restart()
 
@@ -178,7 +175,6 @@ def runaway():
   input(">>> ")
   write("yourhealth", 100)
   write("enemyhp", 100)
-  write("shieldhp", 0)
   os.system("cls")
   restart()
 

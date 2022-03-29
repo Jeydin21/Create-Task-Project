@@ -217,10 +217,10 @@ def successrunaway():
 
 def choosesurrender():
   chance = random.randrange(101)
-  if chance >= 50:
-    failrunaway()
-  elif chance <= 49:
+  if chance >= 30:
     successrunaway()
+  elif chance <= 29:
+    failrunaway()
 
 def battle():
   printcolor("========================================", "cyan")

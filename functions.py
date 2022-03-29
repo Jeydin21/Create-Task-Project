@@ -13,8 +13,9 @@ def rules():
   print("Please do not enter anything into the terminal unless the game tells you.")
   time.sleep(2)
   print("It might make the game do something unexpected, but will not break the game, this message is just to inform you.")
+  time.sleep(2)
   print()
-  printcolor("Press ENTER to continue.", "green")
+  printcolor("Press any key to continue.", "green")
   input(">>> ")
   os.system("cls")
   start()
@@ -40,7 +41,7 @@ def start():
   print("Maybe this will get you the promotion you've always wanted.")
   time.sleep(2)
   print()
-  printcolor("Press ENTER to continue.", "green")
+  printcolor("Press any key to continue.", "green")
   input(">>> ")
   os.system("cls")
   battle()
@@ -80,7 +81,7 @@ def attack():
     write("enemyhp", health)
     print()
   print()
-  printcolor("Press ENTER to continue.", "green")
+  printcolor("Press any key to continue.", "green")
   input(">>> ")
   os.system("cls")
   if int(read("enemyhp")) <= 0:
@@ -122,7 +123,7 @@ def enemystrike():
     write("yourhealth", health)
     print()
   print()
-  printcolor("Press ENTER to continue.", "green")
+  printcolor("Press any key to continue.", "green")
   input(">>> ")
   os.system("cls")
   if int(read("yourhealth")) <= 0:
@@ -138,7 +139,7 @@ def youdied():
   slowprint("You feel sad in your last moments, regretting that you even decided to defend a restaurant that barely even payed anything.")
   slowprint("At least, you won't have to worry about getting that promotion anymore.")
   print()
-  printcolor("Press ENTER to continue.", "green")
+  printcolor("Press any key to continue.", "green")
   input(">>> ")
   write("yourhealth", 100)
   write("enemyhp", 100)
@@ -154,14 +155,14 @@ def shedied():
   slowprint("Good job! You successfully defended your restaurant against Karen!")
   slowprint("Your boss was so proud of you that he gave you a promotion!")
   print()
-  printcolor("Press ENTER to continue.", "green")
+  printcolor("Press any key to continue.", "green")
   input(">>> ")
   write("yourhealth", 100)
   write("enemyhp", 100)
   os.system("cls")
   restart()
 
-def runaway():
+def failrunaway():
   printcolor("========================================", "cyan")
   printcolor("--------------YOU-RAN-AWAY--------------", "red")
   printcolor("========================================", "cyan")
@@ -171,7 +172,7 @@ def runaway():
   slowprint("Summoning the power of the gods, she hurls her shoe at you with inhuman power.")
   slowprint("The shoe hits you, and you die.")
   print()
-  printcolor("Press ENTER to continue.", "green")
+  printcolor("Press any key to continue.", "green")
   input(">>> ")
   write("yourhealth", 100)
   write("enemyhp", 100)
@@ -197,6 +198,30 @@ def restart():
   else:
     restart()
 
+def successrunaway():
+  printcolor("========================================", "cyan")
+  printcolor("--------------YOU-RAN-AWAY--------------", "green")
+  printcolor("========================================", "cyan")
+  slowprint("You ran away from Karen!")
+  slowprint("You ran out of the McDonalds and took off inside your car.")
+  slowprint("You hear the screams of the people inside the McDonalds as you leave, the people you were supposed to protect.")
+  slowprint("You wonder to yourself if you made the right choice in running away.")
+  slowprint("In the end, you decide that it's better to place your health above others in a time of danger.")
+  print()
+  printcolor("Press any key to continue.", "green")
+  input(">>> ")
+  write("yourhealth", 100)
+  write("enemyhp", 100)
+  os.system("cls")
+  restart()
+
+def choosesurrender():
+  chance = random.randrange(101)
+  if chance >= 50:
+    failrunaway()
+  elif chance <= 49:
+    successrunaway()
+
 def battle():
   printcolor("========================================", "cyan")
   printcolor("-----------------BATTLE-----------------", "yellow")
@@ -214,7 +239,7 @@ def battle():
     attack()
   elif choice == "2":
     os.system("cls")
-    runaway()
+    choosesurrender()
   else:
     os.system("cls")
     battle()

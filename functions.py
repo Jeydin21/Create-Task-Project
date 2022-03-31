@@ -3,23 +3,6 @@ import os
 import sys
 from misc import *
 
-def rules():
-  printcolor("========================================", "cyan")
-  printcolor("-----------------RULES------------------", "green")
-  printcolor("========================================", "cyan")
-  time.sleep(1)
-  print("There is only one rule that you have to follow while playing this game.")
-  time.sleep(1)
-  print("Please do not enter anything into the terminal unless the game tells you.")
-  time.sleep(1)
-  print("It might make the game do something unexpected, but will not break the game, this message is just to inform you.")
-  time.sleep(2)
-  print()
-  printcolor("Press ENTER to continue.", "green")
-  input(">>> ")
-  os.system("cls")
-  start()
-
 def start():
   write("yourhealth", 100)
   write("enemyhp", 100)

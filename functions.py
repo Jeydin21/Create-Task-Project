@@ -20,7 +20,6 @@ def rules():
   os.system("cls")
   start()
 
-
 def start():
   write("yourhealth", 100)
   write("enemyhp", 100)

@@ -1,6 +1,5 @@
 import time
 import os
-import sys
 from misc import *
 
 def rules():

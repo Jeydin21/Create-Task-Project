@@ -2,41 +2,23 @@ import time
 import os
 from misc import *
 
-def rules():
-  printcolor("========================================", "cyan")
-  printcolor("-----------------RULES------------------", "green")
-  printcolor("========================================", "cyan")
-  time.sleep(1)
-  print("There is only one rule that you have to follow while playing this game.")
-  time.sleep(2)
-  print("Please do not enter anything into the terminal unless the game tells you.")
-  time.sleep(2)
-  print("It might make the game do something unexpected, but will not break the game, this message is just to inform you.")
-  print()
-  printcolor("Press ENTER to continue.", "green")
-  input(">>> ")
-  os.system("cls")
-  start()
-
-
 def start():
   write("yourhealth", 100)
   write("enemyhp", 100)
-  write("shieldhp", 0)
   printcolor("========================================", "cyan")
   printcolor("-------THE-GREAT-MCDONALDS-BATTLE-------", "green")
   printcolor("========================================", "cyan")
   time.sleep(1)
   print("You are an underage McDonalds worker, who flips burger patties for a living while hoping to get a promotion so you can make a little bit more money.")
-  time.sleep(2)
+  time.sleep(1)
   print("One day, a woman walks into the store and complains about her burger, which turned out to be a little undercooked on the inside.")
-  time.sleep(2)
+  time.sleep(1)
   print("Since no one takes her seriously, she starts throwing things around the restaurant and attacking people.")
-  time.sleep(2)
+  time.sleep(1)
   print("She announces that her name is Karen and that she vows to sue everyone in the restaurant for not caring about her.")
-  time.sleep(2)
+  time.sleep(1)
   print("You walk out of the kitchen with your trusty frying pan to engage in combat with Karen and take care of the problem.")
-  time.sleep(2)
+  time.sleep(1)
   print("Maybe this will get you the promotion you've always wanted.")
   time.sleep(2)
   print()
@@ -142,7 +124,6 @@ def youdied():
   input(">>> ")
   write("yourhealth", 100)
   write("enemyhp", 100)
-  write("shieldhp", 0)
   os.system("cls")
   restart()
 
@@ -159,11 +140,10 @@ def shedied():
   input(">>> ")
   write("yourhealth", 100)
   write("enemyhp", 100)
-  write("shieldhp", 0)
   os.system("cls")
   restart()
 
-def runaway():
+def failrunaway():
   printcolor("========================================", "cyan")
   printcolor("--------------YOU-RAN-AWAY--------------", "red")
   printcolor("========================================", "cyan")
@@ -177,7 +157,6 @@ def runaway():
   input(">>> ")
   write("yourhealth", 100)
   write("enemyhp", 100)
-  write("shieldhp", 0)
   os.system("cls")
   restart()
 
@@ -200,6 +179,30 @@ def restart():
   else:
     restart()
 
+def successrunaway():
+  printcolor("========================================", "cyan")
+  printcolor("--------------YOU-RAN-AWAY--------------", "green")
+  printcolor("========================================", "cyan")
+  slowprint("You ran away from Karen!")
+  slowprint("You ran out of the McDonalds and took off inside your car.")
+  slowprint("You hear the screams of the people inside the McDonalds as you leave, the people you were supposed to protect.")
+  slowprint("You wonder to yourself if you made the right choice in running away.")
+  slowprint("In the end, you decide that it's better to place your health above others in a time of danger.")
+  print()
+  printcolor("Press ENTER to continue.", "green")
+  input(">>> ")
+  write("yourhealth", 100)
+  write("enemyhp", 100)
+  os.system("cls")
+  restart()
+
+def choosesurrender():
+  chance = random.randrange(101)
+  if chance >= 50:
+    successrunaway()
+  elif chance <= 49:
+    failrunaway()
+
 def battle():
   printcolor("========================================", "cyan")
   printcolor("-----------------BATTLE-----------------", "yellow")
@@ -207,8 +210,6 @@ def battle():
   slowprint("You must defend your restaurant against Karen! Send a number to select an option:")
   print()
   print("Your HP:", read("yourhealth"))
-  print("Your Shield HP:", read("shieldhp"))
-  print()
   print("Karen's HP:", read("enemyhp"))
   print()
   print("Send 1 to engage with Karen")
@@ -219,7 +220,7 @@ def battle():
     attack()
   elif choice == "2":
     os.system("cls")
-    runaway()
+    choosesurrender()
   else:
     os.system("cls")
     battle()

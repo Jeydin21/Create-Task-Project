@@ -2,12 +2,14 @@ import time
 import os
 from misc import *
 
-def start():
+def start(name):
+  os.system("cls")
   write("yourhealth", 100)
   write("enemyhp", 100)
   printcolor("========================================", "cyan")
   printcolor("-------THE-GREAT-MCDONALDS-BATTLE-------", "green")
   printcolor("========================================", "cyan")
+  print("Hello " + name + "!")
   time.sleep(1)
   print("You are an underage McDonalds worker, who flips burger patties for a living while hoping to get a promotion so you can make a little bit more money.")
   time.sleep(1)

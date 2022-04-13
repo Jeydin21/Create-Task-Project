@@ -174,7 +174,9 @@ def restart():
   choice = input(">>> ")
   if choice == "1":
     os.system("cls")
-    start()
+    write("yourhealth", 100)
+    write("enemyhp", 100)
+    battle()
   elif choice == "2":
     os.system("cls")
     exit()

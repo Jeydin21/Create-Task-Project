@@ -1,3 +1,4 @@
+# The slowprint(string) function is not mine, I searched how to make this function online and got it from https://stackoverflow.com/a/54472904
 import random
 from misc import *
 import time

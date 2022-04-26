@@ -34,9 +34,9 @@ def openfile(filename):
   return list
 
 def choosestatement(x):
-  file = openfile(x)
-  index = random.randrange(len(file))
-  statement = file[index]
+  list = openfile(x)
+  index = random.randrange(len(list))
+  statement = list[index]
   return " ".join(statement)
 
 def printcolor(string, color):

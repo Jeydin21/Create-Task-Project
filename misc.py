@@ -11,15 +11,15 @@ def slowprint(string):
 		sys.stdout.flush()
 		time.sleep(5./500)
 
-def read(x):
-  in_file = open("data/" + x + ".txt", "r")
+def read(filename):
+  in_file = open("data/" + filename + ".txt", "r")
   line = in_file.readline()
   line_list = line.split(" ")
   in_file.close()
   return " ".join(line_list)
 
-def write(x, string):
-  in_file = open("data/" + x + ".txt", "w")
+def write(filename, string):
+  in_file = open("data/" + filename + ".txt", "w")
   print(string, file = in_file, end=" ")
   in_file.close()
 
@@ -33,8 +33,8 @@ def openfile(filename):
   file.close()
   return list
 
-def choosestatement(x):
-  list = openfile(x)
+def choosestatement(filename):
+  list = openfile(filename)
   index = random.randrange(len(list))
   statement = list[index]
   return " ".join(statement)
